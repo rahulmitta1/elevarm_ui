@@ -1,0 +1,70 @@
+# This file configures the analyzer, which statically analyzes Dart code to
+# check for errors, warnings, and lints.
+#
+# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
+# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
+# invoked from the command line by running `flutter analyze`.
+
+# The following line activates a set of recommended lints for Flutter apps,
+# packages, and plugins designed to encourage good coding practices.
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  # The lint rules applied to this project can be customized in the
+  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
+  # included above or to enable additional rules. A list of all available lints
+  # and their documentation is published at
+  # https://dart-lang.github.io/linter/lints/index.html.
+  #
+  # Instead of disabling a lint rule for the entire project in the
+  # section below, it can also be suppressed for a single line of code
+  # or a specific dart file by using the `// ignore: name_of_lint` and
+  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
+  # producing the lint.
+  rules:
+    always_declare_return_types: true
+    always_put_required_named_parameters_first: true
+    always_use_package_imports: true
+    avoid_bool_literals_in_conditional_expressions: true
+    annotate_redeclares: true
+    avoid_print: true
+    collection_methods_unrelated_type: true
+    combinators_ordering: true
+    dangling_library_doc_comments: true
+    directives_ordering: true
+    implicit_call_tearoffs: true
+    invalid_case_patterns: true
+    library_annotations: true
+    lines_longer_than_80_chars: true
+    matching_super_parameters: true
+    no_literal_bool_comparisons: true
+    no_self_assignments: true
+    no_wildcard_variable_uses: true
+    prefer_single_quotes: true
+    require_trailing_commas: true
+    sort_child_properties_last: true
+    sort_pub_dependencies: true
+    sort_unnamed_constructors_first: true
+    type_literal_in_constant_pattern: true
+    unnecessary_breaks: true
+    unnecessary_library_directive: true
+    unnecessary_null_aware_operator_on_extension_on_nullable: true
+    unnecessary_to_list_in_spreads: true
+    unreachable_from_main: true
+    use_string_in_part_of_directives: true
+
+analyzer:
+  plugins:
+    - dart_code_linter
+  exclude: [build/**, lib/**.freezed.dart, lib/**.g.dart, lib/**.config.dart, upload_metrics.dart]
+
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
+
+dart_code_linter:
+  metrics:
+    cyclomatic-complexity: 20
+    number-of-parameters: 4
+    maximum-nesting-level: 5
+  metrics-exclude:
+    - test/**

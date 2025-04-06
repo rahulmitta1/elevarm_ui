@@ -1,0 +1,42 @@
+image: ghcr.io/cirruslabs/flutter:3.27.1
+
+pipelines:
+  branches:
+    dev:
+      - step:
+          name: "[DEV] Flutter pub get"
+          script:
+            - flutter pub get
+          artifacts:
+            - "pubspec.lock"
+      - step:
+          name: "[DEV] dart_code_linter"
+          script:
+            - dart run dart_code_linter:metrics analyze lib --reporter=json --json-path=metrics-report.json
+            - dart run upload_metrics.dart $SUPABASE_URL $SUPABASE_KEY $BITBUCKET_COMMIT
+          artifacts:
+            - "metrics-report.json"
+    master:
+      - step:
+          name: "[PRD] Flutter pub get"
+          script:
+            - flutter pub get
+          artifacts:
+            - "pubspec.lock"
+      - step:
+          name: "[PRD] Checking for package vulnerabilities"
+          image: golang:alpine3.19
+          script:
+            - go install github.com/google/osv-scanner/cmd/osv-scanner@v1
+            - osv-scanner --lockfile=pubspec.lock
+      - step:
+          size: 2x
+          name: "[PRD] Publish to pub.dev"
+          script:
+            - curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-463.0.0-linux-x86_64.tar.gz
+            - tar -xf google-cloud-cli-463.0.0-linux-x86_64.tar.gz
+            - ./google-cloud-sdk/install.sh -q
+            - echo $SERVICE_ACCOUNT_KEY | base64 -d > key-file.json
+            - ./google-cloud-sdk/bin/gcloud auth activate-service-account --key-file=key-file.json
+            - ./google-cloud-sdk/bin/gcloud auth print-identity-token --audiences=https://pub.dev | dart pub token add https://pub.dev
+            - dart pub publish --force

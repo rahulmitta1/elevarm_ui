@@ -1,0 +1,127 @@
+name: elevarm_ui
+description: "Elevarm design system for Flutter."
+version: 0.11.5
+homepage: "https://bitbucket.org/hanmajid/elevarm_ui"
+
+environment:
+  sdk: ">=2.18.6 <4.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  cached_network_image: ^3.3.0
+  collection: ^1.16.0
+  elevarm_icons: ^1.3.0
+  flutter:
+    sdk: flutter
+  flutter_markdown: ^0.6.18+3
+  flutter_svg: ^2.0.3
+  flutter_typeahead: ^5.2.0
+  fluttericon: ^2.0.0
+  intl: ^0.19.0
+  just_the_tooltip: ^0.0.12
+  photo_view: ^0.14.0
+  pinput: ^5.0.0
+  syncfusion_flutter_charts: ^28.2.12
+  syncfusion_flutter_datepicker: ^28.2.12
+
+dev_dependencies:
+  dart_code_linter: ^1.1.1
+  dart_pre_commit: 5.2.0
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+  supabase: ^2.6.2
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+  # To add assets to your package, add an assets section, like this:
+  assets:
+    - assets/google_fonts/
+    - assets/google_fonts/inter/
+    - assets/google_fonts/poppins/
+    - assets/icons/verified-tick.svg
+    - assets/images/elevarm_logo_black.svg
+    - assets/images/elevarm_logo_colorful.svg
+    - assets/images/elevarm_logo_white_green.svg
+    - assets/images/elevarm_logo_white.svg
+    - assets/images/mastercard.svg
+    - assets/images/not_found_illustration.png
+    - assets/images/under_construction_illustration.png
+    - assets/images/error_illustration.png
+  #
+  # For details regarding assets in packages, see
+  # https://flutter.dev/assets-and-images/#from-packages
+  #
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # To add custom fonts to your package, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/google_fonts/inter/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/google_fonts/inter/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/google_fonts/inter/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/google_fonts/inter/Inter-Bold.ttf
+          weight: 700
+    - family: Poppins
+      fonts:
+        - asset: assets/google_fonts/poppins/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/google_fonts/poppins/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/google_fonts/poppins/Poppins-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/google_fonts/poppins/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/google_fonts/poppins/Poppins-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/google_fonts/poppins/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/google_fonts/poppins/Poppins-BoldItalic.ttf
+          weight: 700
+          style: italic
+  #
+  # For details regarding fonts in packages, see
+  # https://flutter.dev/custom-fonts/#from-packages
+
+# For details regarding `dart_pre_commit` package,
+# see https://pub.dev/packages/dart_pre_commit
+dart_pre_commit:
+  # This tasks checks all staged files for their formatting and corrects the formatting,
+  # if necessary. Internally, it uses the dart format command to accomplish this.
+  format:
+    line-length: 80
+  # This task scans all test files to ensure they only import src libraries.
+  test-imports: false
+  # This tasks checks all files for static analysis issues.
+  # Internally, this runs dart analyze to check for problems.
+  # It can either scan the whole project or only staged files.
+  analyze:
+    error-level: info
+    scan-mode: staged
+  # Scans all staged src files and checks if all files, that define at least
+  # one public top level element (internal or visibleFor* elements do not count),
+  # are exported publicly in at least one file directly below the lib directory.
+  lib-exports: false
+  # If changes have been made to the pubspec.yaml, this task will try to add
+  # this project as dependency to an empty, newly created flutter project to check
+  # if all version constraints of all dependencies are compatible with the latest flutter version.
+  flutter-compat: false
+  # Checks if any packages have available updates.
+  outdated: false
+  # Checks if any dependencies in the pubspec.yaml have version constraints that
+  # allow lower versions than the ones resolved in the lockfile.
+  pull-up-dependencies: false

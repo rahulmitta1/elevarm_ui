@@ -1,0 +1,6 @@
+bricks:
+  elevarm_common_tools:
+    git:
+      url: git@bitbucket.org:elevarm/elevarm_flutter_tools.git
+      path: bricks/elevarm_common_tools
+      ref: master
