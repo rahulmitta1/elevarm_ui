@@ -179,9 +179,9 @@ http_parser
 file:///Users/ramit/.pub-cache/hosted/pub.dev/http_parser-4.1.2/
 file:///Users/ramit/.pub-cache/hosted/pub.dev/http_parser-4.1.2/lib/
 intl
-3.3
-file:///Users/ramit/.pub-cache/hosted/pub.dev/intl-0.20.2/
-file:///Users/ramit/.pub-cache/hosted/pub.dev/intl-0.20.2/lib/
+3.0
+file:///Users/ramit/.pub-cache/hosted/pub.dev/intl-0.19.0/
+file:///Users/ramit/.pub-cache/hosted/pub.dev/intl-0.19.0/lib/
 json_annotation
 3.0
 file:///Users/ramit/.pub-cache/hosted/pub.dev/json_annotation-4.9.0/

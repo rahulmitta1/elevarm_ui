@@ -291,9 +291,9 @@
     },
     {
       "name": "intl",
-      "rootUri": "file:///Users/ramit/.pub-cache/hosted/pub.dev/intl-0.20.2",
+      "rootUri": "file:///Users/ramit/.pub-cache/hosted/pub.dev/intl-0.19.0",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.0"
     },
     {
       "name": "json_annotation",
@@ -764,7 +764,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2025-05-05T06:08:02.209424Z",
+  "generated": "2025-05-05T06:21:36.740461Z",
   "generator": "pub",
   "generatorVersion": "3.6.0",
   "flutterRoot": "file:///Users/ramit/Downloads/flutter",
