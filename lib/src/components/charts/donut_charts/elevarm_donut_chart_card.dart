@@ -93,7 +93,7 @@ class ElevarmDonutChartCard extends StatelessWidget {
                             Container(
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: (point as ChartPoint).color,
+                                color: (point).color,
                               ),
                               width: 8.0,
                               height: 8.0,

@@ -79,16 +79,16 @@ class ElevarmLineChartCard extends StatelessWidget {
                 labelStyle: LibraryTextStyles.interXsRegularGrey600,
               ),
               plotAreaBorderColor: Colors.transparent,
-              primaryYAxis: CategoryAxis(
+              primaryYAxis: const CategoryAxis(
                 maximumLabelWidth: 0.0,
-                axisLine: const AxisLine(
+                axisLine: AxisLine(
                   color: Colors.transparent,
                 ),
-                majorTickLines: const MajorTickLines(
+                majorTickLines: MajorTickLines(
                   color: Colors.transparent,
                 ),
-                labelStyle: const TextStyle(color: Colors.transparent),
-                majorGridLines: const MajorGridLines(
+                labelStyle: TextStyle(color: Colors.transparent),
+                majorGridLines: MajorGridLines(
                   width: 1.0,
                   // ignore: deprecated_member_use_from_same_package
                   color: ElevarmColors.grey100, // FIXME
